@@ -2,6 +2,6 @@
   "name": "template",
   "private": true,
   "dependencies": {
-    "@waline/vercel": "1.41.6"
+    "@waline/vercel": "1.43.1"
   }
 }
