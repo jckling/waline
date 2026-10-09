@@ -1,6 +1,15 @@
 const crypto = require('node:crypto');
 
+const MarkdownIt = require('markdown-it');
 const Application = require('@waline/vercel');
+
+// some legacy records hold non-string comment content, which makes
+// markdown-it throw "Input data should be a String"; render those as empty
+const { parse } = MarkdownIt.prototype;
+
+MarkdownIt.prototype.parse = function (src, env) {
+  return parse.call(this, typeof src === 'string' ? src : '', env);
+};
 
 module.exports = Application({
   avatarUrl(comment) {
