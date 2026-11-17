@@ -6,6 +6,6 @@
     "node": "26.x"
   },
   "dependencies": {
-    "@waline/vercel": "1.43.6"
+    "@waline/vercel": "1.43.7"
   }
 }
